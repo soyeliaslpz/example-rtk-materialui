@@ -4,6 +4,7 @@ export const fakeSlice = createSlice({
   name: "products",
   initialState: {
     products: [],
+    category: [],
   },
 
   reducers: {
@@ -11,6 +12,9 @@ export const fakeSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    setCategory: (state, action) => {
+      state.category = action.payload;
+    },
   },
 });
-export const { setProducts } = fakeSlice.actions;
+export const { setProducts, setCategory } = fakeSlice.actions;

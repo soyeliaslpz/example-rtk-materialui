@@ -9,9 +9,12 @@ export const fakeApi = createApi({
     getProducts: builder.query({
       query: () => `products`,
     }),
+    getCategory: builder.query({
+      query: () => `category`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductsQuery } = fakeApi;
+export const { useGetProductsQuery, useGetCategoryQuery } = fakeApi;
