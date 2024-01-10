@@ -3,26 +3,17 @@ import { useGetProductsQuery, useGetCategoryQuery } from "@/store/fakeapi/api";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts, setCategory } from "@/store/fakeapi/slice";
-
+import { getCategory, getProducts } from "@/store/fakeapi/thunks";
 export default function Home() {
-  const { data } = useGetProductsQuery();
-  //console.log(data);
+  const { data: dataProducts, isLoading } = useGetProductsQuery();
+  const { data: dataCategory } = useGetCategoryQuery();
 
-  const { data: category } = useGetCategoryQuery();
-  console.log(category);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setProducts(data))
-    dispatch(setCategory(category))
-  }, [data, category]);
+    dispatch(getProducts(dataProducts));
+    dispatch(getCategory(dataCategory));
+  }, [dataProducts, dataCategory]);
 
-
-
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  );
+  return <div>{isLoading ? <h1>Cargando...</h1> : <h1>Hello World</h1>}</div>;
 }
