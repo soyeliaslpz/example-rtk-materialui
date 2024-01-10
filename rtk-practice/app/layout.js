@@ -22,7 +22,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import DynamicFormIcon from "@mui/icons-material/DynamicForm";
 import { Provider } from "react-redux";
-import { store } from "@/store/fakeapi/store";
+import { store } from "@/store/pokeApi/store";
 
 // export const metadata = {
 //   title: "Next.js App Router + Material UI v5",

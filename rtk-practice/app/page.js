@@ -1,9 +1,9 @@
 "use client";
-import { useGetProductsQuery, useGetCategoryQuery } from "@/store/fakeapi/api";
+import { useGetProductsQuery, useGetCategoryQuery } from "@/store/pokeApi/api";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getCategory, getPokemon } from "@/store/fakeapi/thunks";
+import { getCategory, getPokemon } from "@/store/pokeApi/thunks";
 export default function Home() {
   const { data: pokemons, isLoading } = useGetProductsQuery();
 
