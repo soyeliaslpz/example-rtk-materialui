@@ -21,6 +21,7 @@ import SupportIcon from "@mui/icons-material/Support";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import DynamicFormIcon from "@mui/icons-material/DynamicForm";
+import PetsIcon from '@mui/icons-material/Pets';
 import { Provider } from "react-redux";
 import { store } from "@/store/pokeApi/store";
 
@@ -33,8 +34,8 @@ const DRAWER_WIDTH = 240;
 
 const LINKS = [
   { text: "Home", href: "/", icon: HomeIcon },
-  { text: "Form", href: "/form", icon: DynamicFormIcon },
-  { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
+  { text: "pokemons", href: "/pokemon", icon: PetsIcon },
+
 ];
 
 const PLACEHOLDER_LINKS = [
