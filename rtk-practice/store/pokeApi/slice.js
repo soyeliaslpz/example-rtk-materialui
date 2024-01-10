@@ -4,7 +4,6 @@ export const pokeSlice = createSlice({
   name: "PokeApi",
   initialState: {
     pokemons: [],
-    category: [],
   },
 
   reducers: {

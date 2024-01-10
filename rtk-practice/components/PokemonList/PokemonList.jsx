@@ -6,20 +6,23 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 function createData(name, url) {
   return { name, url };
 }
 
-const rows = [
-  createData("Frozen yoghurt", 159),
-  createData("Ice cream sandwich", 237),
-];
-
 export default function PokemonList() {
+  const { pokemons } = useSelector((state) => state.PokeApi);
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    setRows(pokemons);
+  }, [pokemons]);
+
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+      {/* <Table sx={{ minWidth: 650 }} aria-label='simple table'>
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
@@ -39,7 +42,7 @@ export default function PokemonList() {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table> */}
     </TableContainer>
   );
 }
