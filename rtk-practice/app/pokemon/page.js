@@ -1,8 +1,6 @@
-import React from 'react'
-import { PokemonList } from '../components/PokemonList/PokemonList';
+import PokemonList from "@/components/PokemonList/PokemonList";
+import React from "react";
 
 export default function PagePokemon() {
-  return (
-    <PokemonList/>
-  )
+  return <PokemonList />;
 }
